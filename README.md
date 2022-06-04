@@ -11,7 +11,6 @@ Tech:
 - csv
 
 ### [Task 2](task2)
-
 Tech:
 
 - python

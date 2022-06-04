@@ -1,4 +1,4 @@
-name: markdownlint
+name: markdown-linter
 on:
   push:
     tags:

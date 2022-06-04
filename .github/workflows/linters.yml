@@ -1,4 +1,4 @@
-name: linters
+name: python-linters
 
 on: [ push, pull_request ]
 
