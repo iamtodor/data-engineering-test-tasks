@@ -1,4 +1,4 @@
-## This repository is my portfolio with different tasks from different companies for Data Engineer
+## This repository is my portfolio with test tasks from different companies for Data Engineer
 
 All the code has been formatted by [Black: The Uncompromising Code Formatter](https://github.com/psf/black)
 
@@ -11,6 +11,7 @@ Tech:
 - csv
 
 ### [Task 2](task2)
+
 Tech:
 
 - python

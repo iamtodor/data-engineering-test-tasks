@@ -1,6 +1,12 @@
 name: python-linters
 
-on: [ push, pull_request ]
+on:
+  push:
+    branches:
+      - master
+      - main
+    paths:
+      - "**.py"
 
 jobs:
   flake8-lint:
