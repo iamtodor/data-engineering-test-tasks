@@ -1,0 +1,9 @@
+.pytest_cache/
+.idea
+**/.ipynb_checkpoints/*
+__pycache__/
+.history
+.DS_Store
+env
+venv
+**/local_db
