@@ -2,13 +2,14 @@
 
 All the code has been formatted by [Black: The Uncompromising Code Formatter](https://github.com/psf/black)
 
-## Configured github actions
+## Configured GitHub actions
 
-After each commit github workflows run the following checks:
+1. Dependabot checks on weekly basis
+2. After each commit GitHub workflows run the following checks:
 
-- flake8
-- mypy
-- markdown linter
+    - flake8
+    - mypy
+    - markdown linter
 
 ## [Task 1](task1)
 
@@ -48,14 +49,13 @@ mypy . \
 --ignore-missing-imports \
 --disallow-untyped-defs \
 --disallow-untyped-calls \
---no-implicit-optional
+--no-implicit-optional \
+--exclude env
 
-flake8 --max-line-length 120 task1 
+flake8 --max-line-length 120 . --exclude env
 black --line-length 120 task4
 
 docker run -v $PWD:/workdir ghcr.io/igorshubovych/markdownlint-cli:latest "**/*.md" \
 --ignore env \
 --disable MD013
-
-mypy . --ignore-missing-imports --disallow-untyped-defs --disallow-untyped-calls --no-implicit-optional --exclude env
 ```
