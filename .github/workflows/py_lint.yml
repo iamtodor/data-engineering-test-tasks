@@ -27,3 +27,6 @@ jobs:
         uses: py-actions/flake8@v2
         with:
           max-line-length: 120
+      - name: mypy
+        run: |
+          mypy . --ignore-missing-imports --disallow-untyped-defs --disallow-untyped-calls --no-implicit-optional --exclude env
