@@ -49,9 +49,9 @@ pgcli postgresql://postgres:1234@localhost:5432/postgres
 
 ```shell
 CREATE TABLE user_answers (
-timestamp TIMESTAMP NOT NULL, 
-user_id BIGINT NOT NULL, 
-user_answer BIGINT NOT NULL, 
+timestamp TIMESTAMP NOT NULL,
+user_id BIGINT NOT NULL,
+user_answer BIGINT NOT NULL,
 answered_correctly BIGINT NOT NULL
 );
 ```
