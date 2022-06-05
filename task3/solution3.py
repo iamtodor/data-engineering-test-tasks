@@ -44,7 +44,7 @@ class Solution:
             ).otherwise(0),
         )
 
-        print(transactions.sort(F.col("timestamp")).show(100, truncate=False))
+        transactions.sort(F.col("timestamp")).show(100, truncate=False)
 
     @staticmethod
     def calculate_time_diff_in_transactions(transactions: DataFrame, window: WindowSpec) -> DataFrame:
