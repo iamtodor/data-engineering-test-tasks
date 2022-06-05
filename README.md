@@ -2,6 +2,14 @@
 
 All the code has been formatted by [Black: The Uncompromising Code Formatter](https://github.com/psf/black)
 
+## Configured github actions
+
+After each commit github workflows run the following checks:
+
+- flake8
+- mypy
+- markdown linter
+
 ## [Task 1](task1)
 
 Tech:
@@ -36,12 +44,18 @@ Tech:
 - postgres in docker with persistent storage
 
 ```shell
-mypy task1 \
+mypy . \
 --ignore-missing-imports \
 --disallow-untyped-defs \
 --disallow-untyped-calls \
---no-implicit-optional 
+--no-implicit-optional
 
 flake8 --max-line-length 120 task1 
 black --line-length 120 task4
+
+docker run -v $PWD:/workdir ghcr.io/igorshubovych/markdownlint-cli:latest "**/*.md" \
+--ignore env \
+--disable MD013
+
+mypy . --ignore-missing-imports --disallow-untyped-defs --disallow-untyped-calls --no-implicit-optional --exclude env
 ```
