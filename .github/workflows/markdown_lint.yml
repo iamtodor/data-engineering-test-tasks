@@ -5,14 +5,12 @@ on:
     branches:
       - master
       - main
-  pull_request:
     paths:
-      - "**/*.md"
-      - ".github/workflows/markdown_lint.yaml"
+      - "**.md"
 permissions:
   contents: read
 jobs:
-  markdownlint:
+  markdown-lint:
     name: Lint repository
     runs-on: ubuntu-latest
     steps:
