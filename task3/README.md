@@ -1,4 +1,4 @@
-## Interview case
+# Interview case
 
 The African telecom market is mainly prepaid. This means that the Telco operators need to rely on point of sales (POS) in order to sell recharge to their customers. So it's crucial for the operators to make sure that their POS have enough stock for their daily operations.
 

@@ -1,4 +1,4 @@
-# Questions:
+# Questions
 
 1. Which zones have the most pickups/drop offs overall?
 2. What are the peak hours for taxi?

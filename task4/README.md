@@ -1,4 +1,4 @@
-## Prerequisites
+# Prerequisites
 
 docker and gnu-make need to be already installed on your system. (Installing them on Linux or MacOS is fairly straightforward, but if you’re running Windows, then we recommend using WSL2.)
 
@@ -28,6 +28,7 @@ Among these, you need to only use the columns `timestamp`, `user_id`, `user_answ
 ## Solution
 
 ### 1. Run postgres in docker container
+
 ```shell
 docker run \
 --rm \
@@ -39,11 +40,13 @@ timescale/timescaledb:latest-pg14
 ```
 
 ### 2. Connect to postgres
+
 ```shell
 pgcli postgresql://postgres:1234@localhost:5432/postgres
 ```
 
 ### 3. Create postgres table
+
 ```shell
 CREATE TABLE user_answers (
 timestamp TIMESTAMP NOT NULL, 

@@ -1,8 +1,8 @@
-## This repository is my portfolio with test tasks from different companies for Data Engineer
+# My portfolio with test tasks from different companies for Data Engineer
 
 All the code has been formatted by [Black: The Uncompromising Code Formatter](https://github.com/psf/black)
 
-### [Task 1](task1)
+## [Task 1](task1)
 
 Tech:
 
@@ -10,7 +10,7 @@ Tech:
 - spark
 - csv
 
-### [Task 2](task2)
+## [Task 2](task2)
 
 Tech:
 
@@ -18,7 +18,7 @@ Tech:
 - spark
 - csv
 
-### [Task 3](task3)
+## [Task 3](task3)
 
 Tech:
 
@@ -26,7 +26,7 @@ Tech:
 - spark
 - csv
 
-### [Task 4](task4)
+## [Task 4](task4)
 
 Tech:
 
@@ -35,8 +35,13 @@ Tech:
 - parquet
 - postgres in docker with persistent storage
 
-```
-mypy task1 --ignore-missing-imports --disallow-untyped-defs --disallow-untyped-calls --no-implicit-optional 
+```shell
+mypy task1 \
+--ignore-missing-imports \
+--disallow-untyped-defs \
+--disallow-untyped-calls \
+--no-implicit-optional 
+
 flake8 --max-line-length 120 task1 
 black --line-length 120 task4
 ```
