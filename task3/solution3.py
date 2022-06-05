@@ -47,7 +47,7 @@ class Solution:
         transactions.sort(F.col("timestamp")).show(100, truncate=False)
 
     @staticmethod
-    def calculate_time_diff_in_transactions(transactions: DataFrame, window: WindowSpec) -> DataFrame:
+    def calculate_time_diff_in_transactions(transactions:  DataFrame, window: WindowSpec) -> DataFrame:
         transactions = transactions.withColumn(
             "secs_between_transactions",
             (
