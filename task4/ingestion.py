@@ -1,4 +1,4 @@
-from pyspark.sql import SparkSession
+from pyspark.sql import SparkSession, DataFrame
 from pyspark.sql import functions as F
 
 from task4.constants import JDBC_URL, POSTGRES_USER, POSTGRES_PASS, POSTGRES_TABLE
@@ -24,7 +24,7 @@ class Solution:
 
         self.ingest_data(data)
 
-    def load_data(self):
+    def load_data(self) -> DataFrame:
         data = (
             self.spark.read.format("parquet")
             .option("header", "true")
@@ -34,7 +34,7 @@ class Solution:
         return data
 
     @staticmethod
-    def ingest_data(data):
+    def ingest_data(data: DataFrame) -> None:
         (
             data.write.mode("overwrite")
             .format("jdbc")
