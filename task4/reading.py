@@ -27,10 +27,10 @@ class Solution:
         self.save_data(result)
 
     @staticmethod
-    def save_data(result):
+    def save_data(result: DataFrame) -> None:
         (result.coalesce(1).write.format("csv").option("header", "true").mode("overwrite").save("result.csv"))
 
-    def load_data(self):
+    def load_data(self) -> DataFrame:
         data = (
             self.spark.read.format("jdbc")
             .option("url", JDBC_URL)
