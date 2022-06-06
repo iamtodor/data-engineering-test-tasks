@@ -5,7 +5,7 @@ All the code has been formatted by [Black: The Uncompromising Code Formatter](ht
 ## Configured GitHub actions
 
 1. Dependabot checks on weekly basis
-2. After each commit GitHub workflows run the following checks:
+1. After each commit GitHub workflows run the following checks:
 
     - flake8
     - mypy
@@ -44,18 +44,6 @@ Tech:
 - parquet
 - postgres in docker with persistent storage
 
-```shell
-mypy . \
---ignore-missing-imports \
---disallow-untyped-defs \
---disallow-untyped-calls \
---no-implicit-optional \
---exclude env
+## Kafka pet project
 
-flake8 --max-line-length 120 . --exclude env
-black --line-length 120 task4
-
-docker run -v $PWD:/workdir ghcr.io/igorshubovych/markdownlint-cli:latest "**/*.md" \
---ignore env \
---disable MD013
-```
+The project itself is another [GitHub repo](https://github.com/iamtodor/kafka-twitter-project). The purpose of the project is to prove Java, Kafka, Prometheus and Grafana knowledge.
