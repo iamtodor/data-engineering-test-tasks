@@ -7,6 +7,8 @@ on:
       - main
     paths:
       - "**.md"
+      - ".github/workflows/markdown_lint.yaml"
+      - "markdown-rules.rb"
 permissions:
   contents: read
 jobs:
