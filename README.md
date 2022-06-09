@@ -7,9 +7,9 @@ All the code has been formatted by [Black: The Uncompromising Code Formatter](ht
 1. Dependabot checks on weekly basis
 1. After each commit GitHub workflows run the following checks:
 
-    - flake8
-    - mypy
-    - markdown linter
+    - [flake8](https://flake8.pycqa.org/en/latest/)
+    - [mypy](https://mypy.readthedocs.io/en/stable/)
+    - [markdown linter](https://github.com/markdownlint/markdownlint)
 
 ## [Task 1](task1)
 
