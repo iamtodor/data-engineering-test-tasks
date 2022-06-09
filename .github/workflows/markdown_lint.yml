@@ -14,11 +14,12 @@ jobs:
     name: Lint repository
     runs-on: ubuntu-latest
     steps:
-      - name: Markdown Linting Action
-        uses: avto-dev/markdown-lint@v1.5.0
-#      - name: markdownlint-cli
-#        uses: nosborn/github-action-markdown-cli@v3.0.1
-#        with:
-#          files: "**/*.md"
-#          config_file: .markdownlint.yaml
-#          rules: examples/rules/custom.js
+      - uses: actions/checkout@v2
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.1"
+      - name: Install mdl
+        run: gem install mdl
+      - name: Run markdown-linter
+        run: mdl -s ./markdown-rules.rb .
