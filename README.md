@@ -44,6 +44,15 @@ Tech:
 - parquet
 - postgres in docker with persistent storage
 
+## [Task 5](task5)
+
+Tech:
+
+- python
+- spark
+- pytest
+- json/parquet
+
 ## Kafka pet project
 
 The project itself is another [GitHub repo](https://github.com/iamtodor/kafka-twitter-project). The purpose of the project is to prove Java, Kafka, Prometheus and Grafana knowledge.
