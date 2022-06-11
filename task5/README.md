@@ -23,7 +23,7 @@ Except for these requirements, feel free to use whichever libraries, frameworks 
 
 ## Expectations
 
-Your code will be reviewed by multiple engineers at Didomi and will serve as the base for a discussion in interviews.  
+Your code will be reviewed by multiple engineers at Didomi and will serve as the base for a discussion in interviews.
 We want to see how you approach working on a complete project and strongly recommend that you work on this challenge alone. We will particularly focus on your attention to details and expect the code to be professionally structured, commented, documented, and tested.
 
 If anything is unclear, feel free to ask any question that might help you understand the specifications or requirements better.
