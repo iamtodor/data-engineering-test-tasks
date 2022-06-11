@@ -106,16 +106,3 @@ The Spark job is expected to output the following grouped metrics as a Parquet t
 On top of computing the metrics listed above, the following operations must be run:
 
 - Deduplication of events based on event ID
-
-
-## TODO
-- pytest fixtures
-- create separate data for tests
-- pageviews_with_consent
-
-
-```shell
-python -m pytest tests/ -vvs
-python -m pytest tests/test_etl_job.py -k 'test_extract_event_type' -vvs
-black --line-length 120 src
-```
