@@ -63,5 +63,9 @@ def test_extract_event_type(spark_session: SparkSession) -> None:
     data = Job.extract_event_type(data, "consents_given", "consents.given")
 
     assert data.groupBy("pageviews").count().where(F.col("pageviews") == 1).collect()[0].asDict()["count"] == 4
-    assert data.groupBy("consents_asked").count().where(F.col("consents_asked") == 1).collect()[0].asDict()["count"] == 3
-    assert data.groupBy("consents_given").count().where(F.col("consents_given") == 1).collect()[0].asDict()["count"] == 4
+    assert (
+        data.groupBy("consents_asked").count().where(F.col("consents_asked") == 1).collect()[0].asDict()["count"] == 3
+    )
+    assert (
+        data.groupBy("consents_given").count().where(F.col("consents_given") == 1).collect()[0].asDict()["count"] == 4
+    )
