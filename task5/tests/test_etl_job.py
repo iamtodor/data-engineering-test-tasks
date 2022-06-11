@@ -50,12 +50,18 @@ def test_extract_event_type(spark_session: SparkSession) -> None:
         ("5", "pageview"),
         ("6", "consent.asked"),
         ("7", "pageview"),
+        ("8", "consents.given"),
+        ("9", "consents.given"),
+        ("10", "consents.given"),
+        ("11", "consents.given"),
     ]
 
     input_df = spark_session.createDataFrame(data=input_data, schema=input_schema)
 
     data = Job.extract_event_type(input_df, "pageviews", "pageview")
-    data = Job.extract_event_type(data, "consent_asked", "consent.asked")
+    data = Job.extract_event_type(data, "consents_asked", "consent.asked")
+    data = Job.extract_event_type(data, "consents_given", "consents.given")
 
     assert data.groupBy("pageviews").count().where(F.col("pageviews") == 1).collect()[0].asDict()["count"] == 4
-    assert data.groupBy("consent_asked").count().where(F.col("consent_asked") == 1).collect()[0].asDict()["count"] == 3
+    assert data.groupBy("consents_asked").count().where(F.col("consents_asked") == 1).collect()[0].asDict()["count"] == 3
+    assert data.groupBy("consents_given").count().where(F.col("consents_given") == 1).collect()[0].asDict()["count"] == 4
