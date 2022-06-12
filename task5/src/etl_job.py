@@ -5,9 +5,7 @@ from pyspark.sql.types import StructType, StructField, StringType, DateType
 
 class Job:
     def __init__(self) -> None:
-        self.__spark = (
-            SparkSession.builder.master("local[*]").appName("task5").getOrCreate()
-        )
+        self.__spark = SparkSession.builder.master("local[*]").appName("task5").getOrCreate()
         self.__spark.sparkContext.setLogLevel("WARN")
         self.__dimensions = ["datehour", "domain", "user.country"]
 
@@ -43,13 +41,10 @@ class Job:
 
         self.save_data(data)
 
-    def load_data(self, schema: StructType, input_format: str = "json",
-                  input_location: str = "../data/input") -> DataFrame:
-        return (
-            self.__spark.read.format(input_format)
-                .schema(schema)
-                .load(input_location)
-        )
+    def load_data(
+        self, schema: StructType, input_format: str = "json", input_location: str = "../data/input"
+    ) -> DataFrame:
+        return self.__spark.read.format(input_format).schema(schema).load(input_location)
 
     @staticmethod
     def drop_duplicates(data: DataFrame) -> DataFrame:

@@ -1,4 +1,6 @@
 import os
+from pathlib import PosixPath
+from typing import List, Tuple
 
 import pytest
 from pyspark.sql import SparkSession
@@ -8,7 +10,7 @@ from task5.src.etl_job import Job
 
 
 @pytest.fixture
-def schema():
+def schema() -> StructType:
     return StructType(
         [
             StructField("id", StringType(), True),
@@ -18,15 +20,14 @@ def schema():
 
 
 @pytest.fixture
-def data():
-    return [
-        ("1", "foo"),
-        ("2", "bar"),
-        ("3", "baz")
-    ]
+def data() -> List[Tuple[str, str]]:
+    return [("1", "foo"), ("2", "bar"), ("3", "baz")]
 
 
-def test_save_data(schema, data, tmp_path, spark_session: SparkSession) -> None:
+def test_save_data(
+    schema: StructType, data: List[Tuple[str, str]], tmp_path: PosixPath, spark_session: SparkSession
+) -> None:
+    print(type(tmp_path))
     input_df = spark_session.createDataFrame(data=data, schema=schema)
 
     output_location = tmp_path.joinpath("output")
@@ -39,7 +40,9 @@ def test_save_data(schema, data, tmp_path, spark_session: SparkSession) -> None:
     assert sum(output_format in str(file_extension) for file_extension in file_extensions) == 1
 
 
-def test_load_data(schema, data, tmp_path, spark_session: SparkSession) -> None:
+def test_load_data(
+    schema: StructType, data: List[Tuple[str, str]], tmp_path: PosixPath, spark_session: SparkSession
+) -> None:
     input_df = spark_session.createDataFrame(data=data, schema=schema)
 
     data_location = tmp_path.joinpath("output")
@@ -50,5 +53,5 @@ def test_load_data(schema, data, tmp_path, spark_session: SparkSession) -> None:
     loaded_data = job.load_data(schema, data_format, str(data_location))
     assert loaded_data.count() == 3
     assert len(loaded_data.columns) == 2
-    assert 'id' in loaded_data.columns
-    assert 'type' in loaded_data.columns
+    assert "id" in loaded_data.columns
+    assert "type" in loaded_data.columns
