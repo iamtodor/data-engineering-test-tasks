@@ -13,6 +13,8 @@ All the code has been formatted by [Black: The Uncompromising Code Formatter](ht
 
 ## [Task 1](task1)
 
+Description: calculate pyspark aggregations from the given csv.
+
 Tech:
 
 - python
@@ -20,6 +22,8 @@ Tech:
 - csv
 
 ## [Task 2](task2)
+
+Description: calculate pyspark aggregations from the given parquet and csv.
 
 Tech:
 
@@ -29,6 +33,8 @@ Tech:
 
 ## [Task 3](task3)
 
+Description: calculate pyspark aggregations from the given csv.
+
 Tech:
 
 - python
@@ -36,6 +42,13 @@ Tech:
 - csv
 
 ## [Task 4](task4)
+
+Description:
+
+- calculate pyspark aggregations from the given parquet
+- ingest the data to postgres
+- read the data from postgres
+- calculate pyspark aggregations and save as cvs
 
 Tech:
 
@@ -46,10 +59,15 @@ Tech:
 
 ## [Task 5](task5)
 
+Description:
+
+- calculate pyspark metrics and dimensions aggregations from given json
+- test the app
+
 Tech:
 
 - python
-- spark: more complex aggregations compare to the first four
+- spark
 - pytest: 91% test coverage according to [Coverage](https://coverage.readthedocs.io/en/6.4.1/)
 - json/parquet
 
