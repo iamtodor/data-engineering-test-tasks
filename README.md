@@ -49,8 +49,8 @@ Tech:
 Tech:
 
 - python
-- spark
-- pytest
+- spark: more complex aggregations compare to the first four
+- pytest: 91% test coverage according to [Coverage](https://coverage.readthedocs.io/en/6.4.1/)
 - json/parquet
 
 ## Kafka pet project
