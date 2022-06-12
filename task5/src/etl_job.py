@@ -10,7 +10,7 @@ class Job:
         self.__dimensions = ["datehour", "domain", "user.country"]
 
     @staticmethod
-    def __init_schema() -> StructType:
+    def init_schema() -> StructType:
         return StructType(
             [
                 StructField("datetime", DateType(), True),
@@ -31,7 +31,7 @@ class Job:
         )
 
     def execute(self) -> None:
-        df_schema = self.__init_schema()
+        df_schema = self.init_schema()
         data = self.load_data(df_schema)
         data = self.drop_duplicates(data)
         data = self.extract_event_type(data, "pageviews", "pageview")
