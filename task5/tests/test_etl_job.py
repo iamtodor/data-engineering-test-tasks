@@ -1,19 +1,10 @@
-from typing import Generator
+import os
 
-import pytest
 from pyspark.sql import SparkSession
 from pyspark.sql import functions as F
 from pyspark.sql.types import StructType, StructField, StringType
 
 from task5.src.etl_job import Job
-
-
-@pytest.fixture(scope="session")
-def spark_session() -> Generator:
-    spark_session = SparkSession.builder.master("local[*]").appName("some-app-name").getOrCreate()
-
-    yield spark_session
-    spark_session.stop()
 
 
 def test_drop_duplicates(spark_session: SparkSession) -> None:
@@ -64,8 +55,10 @@ def test_extract_event_type(spark_session: SparkSession) -> None:
 
     assert data.groupBy("pageviews").count().where(F.col("pageviews") == 1).collect()[0].asDict()["count"] == 4
     assert (
-        data.groupBy("consents_asked").count().where(F.col("consents_asked") == 1).collect()[0].asDict()["count"] == 3
+            data.groupBy("consents_asked").count().where(F.col("consents_asked") == 1).collect()[0].asDict()[
+                "count"] == 3
     )
     assert (
-        data.groupBy("consents_given").count().where(F.col("consents_given") == 1).collect()[0].asDict()["count"] == 4
+            data.groupBy("consents_given").count().where(F.col("consents_given") == 1).collect()[0].asDict()[
+                "count"] == 4
     )
