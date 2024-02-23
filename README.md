@@ -71,6 +71,13 @@ Tech:
 - pytest: 91% test coverage according to [Coverage](https://coverage.readthedocs.io/en/6.4.1/)
 - json/parquet
 
+## [Task 6](./task6.py)
+
+Very small task, PySpark, no sense to split it to separate functions and test them.
+
+- remove non-ascii characters
+- drop duplicates bases on `dt` column
+
 ## Kafka pet project
 
 The project itself is another [GitHub repo](https://github.com/iamtodor/kafka-twitter-project). The purpose of the project is to prove Java, Kafka, Prometheus and Grafana knowledge.
