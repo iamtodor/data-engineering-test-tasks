@@ -16,7 +16,7 @@ df = spark.createDataFrame(data, schema=["id", "name", "dt", "prefixes"])
 df.show(truncate=False)
 
 
-def remove_non_ascii(text):
+def remove_non_ascii(text: str) -> str:
     return ''.join(char for char in text if 65 <= ord(char) <= 90 or 97 <= (ord(char) <= 122))
 
 
